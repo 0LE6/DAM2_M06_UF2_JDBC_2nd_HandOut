@@ -41,7 +41,7 @@ public class SecondHandoutAboutJDBC {
 				if (n != 0) System.out.println("GOOD UPDATE");
 				else System.out.println("BAD UPDATE");
 				
-				// --- EXERCISE 1 ---
+				// - EXERCISE 1 -
 				// 1st -> Preparing the SELECT query w/ ?
                 String sSQL = "SELECT * FROM alumnos WHERE exp = ?";
 
@@ -55,6 +55,24 @@ public class SecondHandoutAboutJDBC {
                     System.out.println("Results for exp -> " + i + ":");
                     ShowResults(resultSet);
                 }
+				
+				// -- EXERCISE 2 --
+				
+				// Preparing the statement w/ query
+				pS = con.prepareStatement(
+						"INSERT INTO doctor (doctor_codi, doctor_hospital_codi,"
+						+ "doctor_nom, doctor_especialitat)"
+						+ "VALUES (?, ?, ?, ?)");
+				
+				// INSERT w/ addBatch() & executeBatch() 
+				pS.setInt(1, 1);
+				
+				
+				pS.setInt(2, 2);
+				
+				
+				pS.setInt(3, 3);
+				
 				
 				// Finally closing
 				pS.close();
