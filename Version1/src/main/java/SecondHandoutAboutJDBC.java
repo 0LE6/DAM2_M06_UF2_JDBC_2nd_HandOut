@@ -46,9 +46,10 @@ public class SecondHandoutAboutJDBC {
                 pS = con.prepareStatement(sSQL);
                 
                 // We're going to select alumnos with exp from 1 to 3
-                ResultSet resultSet = pS.executeQuery();
+                ResultSet resultSet;
 				for (int i = 1; i <= 2; i++) {
                     pS.setInt(1, i); 
+                    resultSet = pS.executeQuery();
                     System.out.println("Results for exp -> " + i + ":");
                     ShowResults(resultSet);
                 }
@@ -137,7 +138,7 @@ public class SecondHandoutAboutJDBC {
 					ShowResultForCallableStatementWithcursor(resultSet);
 					
 				}
-				else ;
+				else System.out.println("The stored procedure did not return a ResultSet.");
 				
 				
 				
