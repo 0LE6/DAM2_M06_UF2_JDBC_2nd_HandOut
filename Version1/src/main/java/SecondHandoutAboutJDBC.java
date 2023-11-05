@@ -66,14 +66,24 @@ public class SecondHandoutAboutJDBC {
 				
 				// INSERT w/ addBatch() & executeBatch() 
 				pS.setInt(1, 1);
+				pS.setInt(2, 18);
+				pS.setString(3, "Frankenstein");
+				pS.setString(4, "Monstruos");
+				pS.addBatch();
 				
+				pS.setInt(1, 2);
+				pS.setInt(2, 18);
+				pS.setString(3, "Dolittle");
+				pS.setString(4, "Zoologia");
+				pS.addBatch();
 				
-				pS.setInt(2, 2);
+				pS.setInt(1, 3);
+				pS.setInt(2, 18);
+				pS.setString(3, "Patch Adams");
+				pS.setString(4, "Risoterapia");
+				pS.addBatch();
 				
-				
-				pS.setInt(3, 3);
-				
-				
+				int[] batchInsertResult = pS.executeBatch();
 				// Finally closing
 				pS.close();
 			}
