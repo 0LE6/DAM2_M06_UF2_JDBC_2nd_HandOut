@@ -6,6 +6,11 @@ public class LastExerciseOf2ndHandOut {
 		
 		// Here we create our new Doc.
 		Doctor drOleg = new Doctor(69, "Oleg", 18, "Programmer");
+		int newHospitalCode = 22;
+		
+		if (CreateAndUpdate(drOleg, newHospitalCode))
+			System.out.println("SUCCESFULLY CREATED & UPDATED");
+		
 		
 
 	}
