@@ -20,11 +20,8 @@ public class SecondHandoutAboutJDBC {
 				ResultSet rS = st.executeQuery(sSql); 
 				
 				rS.close();
-                st.close();
-                conn.close();
-                
-				
-				
+				st.close();
+				conn.close();
 			}
 		}
 		catch (Exception ex){
