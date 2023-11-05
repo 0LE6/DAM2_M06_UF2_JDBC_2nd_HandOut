@@ -96,7 +96,8 @@ public class SecondHandoutAboutJDBC {
 					pS.setInt(i,22);
 					pS.addBatch();
 				}
-				
+				int[] batchUpdateResult = pS.executeBatch();
+				System.out.println("Number of UPDATE w/ Batch -> " + batchUpdateResult.length);
 				
 				
 				
