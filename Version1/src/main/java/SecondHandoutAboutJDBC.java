@@ -50,7 +50,7 @@ public class SecondHandoutAboutJDBC {
                 
                 // We're going to select alumnos with exp from 1 to 3
 				for (int i = 1; i <= 2; i++) {
-                    pS.setInt(1, i); // Set the parameter value
+                    pS.setInt(1, i); 
                     ResultSet resultSet = pS.executeQuery();
                     System.out.println("Results for exp -> " + i + ":");
                     ShowResults(resultSet);
@@ -58,11 +58,11 @@ public class SecondHandoutAboutJDBC {
 				
 				// -- EXERCISE 2 --
 				
-				// Preparing the statement w/ query
-				pS = con.prepareStatement(
-						"INSERT INTO doctor (doctor_codi, doctor_hospital_codi,"
+				// Preparing the INSERT statement w/ query
+				sSQL = "INSERT INTO doctor (doctor_codi, doctor_hospital_codi,"
 						+ "doctor_nom, doctor_especialitat)"
-						+ "VALUES (?, ?, ?, ?)");
+						+ "VALUES (?, ?, ?, ?)";
+				pS = con.prepareStatement(sSQL);
 				
 				// INSERT w/ addBatch() & executeBatch() 
 				pS.setInt(1, 1);
@@ -84,6 +84,22 @@ public class SecondHandoutAboutJDBC {
 				pS.addBatch();
 				
 				int[] batchInsertResult = pS.executeBatch();
+				System.out.println("Number of INSERTs w/ Batch -> " + batchInsertResult.length);
+				
+				// Preparing the UPDATE statement w/ query
+				sSQL = "UPDATE doctor SET hospital_codi = ?"
+						+ "WHERE doctor_codi >= ? AND doctor_codi <= ?";
+				pS = con.prepareStatement(sSQL);
+				
+				for (int i = 1; i <= 3; i++) {
+					// Changing the Hospital of our 3 new doctors
+					pS.setInt(i,22);
+					pS.addBatch();
+				}
+				
+				
+				
+				
 				// Finally closing
 				pS.close();
 			}
