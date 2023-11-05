@@ -16,7 +16,7 @@ public class HelloWorld {
 			
 				// Second part
 				Statement st = conn.createStatement();
-				// ------ pruebas github 
+				// ------ pruebas github [No puedo commitear lol maldito Eclipse]
 				
 				//for DDL and DML (except SELECT)
 				String sSql= "INSERT/DELETE/UPDATE/CREATE TABLE/DROP TABLE…..";
