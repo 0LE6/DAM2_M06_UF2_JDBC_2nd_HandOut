@@ -143,7 +143,10 @@ public class SecondHandoutAboutJDBC {
 				
 				
 				// Finally closing
+				//resultSet.close();
 				pS.close();
+				cS.close();
+				con.close();
 			}
 		}
 		catch (Exception e){
