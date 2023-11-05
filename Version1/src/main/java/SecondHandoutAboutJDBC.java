@@ -49,10 +49,10 @@ public class SecondHandoutAboutJDBC {
                 pS = con.prepareStatement(sSQL);
                 
                 // We're going to select alumnos with exp from 1 to 3
-				for (int i = 1; i <= 3; i++) {
+				for (int i = 1; i <= 2; i++) {
                     pS.setInt(1, i); // Set the parameter value
                     ResultSet resultSet = pS.executeQuery();
-                    System.out.println("Results for exp > " + i + ":");
+                    System.out.println("Results for exp -> " + i + ":");
                     ShowResults(resultSet);
                 }
 				
