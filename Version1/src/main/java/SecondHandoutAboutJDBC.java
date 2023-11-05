@@ -9,19 +9,6 @@ public class SecondHandoutAboutJDBC {
 			Connection con = DriverManager.getConnection(connectionUrl, "root", "");
 			if (con != null) {
 				
-				// Little reminder about Statement
-//				System.out.println("SUCCESFULLY CONNECTED TO HOSPITAL");
-//				Statement st = conn.createStatement();
-//				
-//				// Pues a ver si chuta lo de commitear a github desde aqui
-//				String sSql= "INSERT/DELETE/UPDATE/CREATE TABLE/DROP TABLE…..";
-//				sSql = "SELECT * FROM empl";
-//				ResultSet rS = st.executeQuery(sSql); 
-//				
-//				rS.close();
-//				st.close();
-//				conn.close();
-				
 				// PREPARED STATEMENT from here:
 				
 				// 1st -> Preparing the query w/ ? as parameters
