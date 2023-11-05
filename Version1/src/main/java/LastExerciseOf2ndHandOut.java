@@ -4,6 +4,14 @@ public class LastExerciseOf2ndHandOut {
 	
 	public static void main(String[] args) {
 		
+		// Here we create our new Doc.
+		
+		
+
+	}
+	
+	public static boolean CreateAndUpdate(Doctor d, int updateHospitalCode) {
+		
 		String connectionUrl = "jdbc:mysql://localhost:3306/hospital?serverTimezone=UTC";
 		String user = "root"; String pass = "";
 		
@@ -31,7 +39,9 @@ public class LastExerciseOf2ndHandOut {
 		catch (SQLException e) {
 			e.printStackTrace(); // Showing the TRACEBACK of our EXCEPTION
 		}
-
+		
+		// TODO
+		return true;
 	}
 }
 

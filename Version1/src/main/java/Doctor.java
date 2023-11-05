@@ -53,8 +53,8 @@ public class Doctor {
         return "Doctor{" +
                 "DoctorCode =" + doctorCode +
                 ", DoctorName ='" + doctorName + '\'' +
-                ", DoctorSpecialization='" + doctorSpecialization + '\'' +
-                ", HospitalCode=" + hospitalCode +
+                ", DoctorSpecialization ='" + doctorSpecialization + '\'' +
+                ", HospitalCode =" + hospitalCode +
                 '}';
     }
 }
