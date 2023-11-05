@@ -42,11 +42,13 @@ public class SecondHandoutAboutJDBC {
 				else System.out.println("BAD UPDATE");
 				
 				// --- EXERCISE 1 ---
-				 // 1st -> Preparing the SELECT query with placeholders
+				// 1st -> Preparing the SELECT query w/ ?
                 String sSQL = "SELECT * FROM alumnos WHERE exp >= ?";
 
                 // 2nd -> Creating the PreparedStatement
                 pS = con.prepareStatement(sSQL);
+                
+                // We're going to select alumnos with exp from 1 to 3
 				for (int i = 1; i <= 3; i++) {
                     pS.setInt(1, i); // Set the parameter value
                     ResultSet resultSet = pS.executeQuery();
