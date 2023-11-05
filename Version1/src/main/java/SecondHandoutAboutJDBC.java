@@ -65,35 +65,36 @@ public class SecondHandoutAboutJDBC {
 				pS = con.prepareStatement(sSQL);
 				
 				// INSERT w/ addBatch() & executeBatch() 
-				pS.setInt(1, 1);
-				pS.setInt(2, 18);
-				pS.setString(3, "Frankenstein");
-				pS.setString(4, "Monstruos");
-				pS.addBatch();
-				
-				pS.setInt(1, 2);
-				pS.setInt(2, 18);
-				pS.setString(3, "Dolittle");
-				pS.setString(4, "Zoologia");
-				pS.addBatch();
-				
-				pS.setInt(1, 3);
-				pS.setInt(2, 18);
-				pS.setString(3, "Patch Adams");
-				pS.setString(4, "Risoterapia");
-				pS.addBatch();
+//				pS.setInt(1, 1);
+//				pS.setInt(2, 18);
+//				pS.setString(3, "Frankenstein");
+//				pS.setString(4, "Monstruos");
+//				pS.addBatch();
+//				
+//				pS.setInt(1, 2);
+//				pS.setInt(2, 18);
+//				pS.setString(3, "Dolittle");
+//				pS.setString(4, "Zoologia");
+//				pS.addBatch();
+//				
+//				pS.setInt(1, 3);
+//				pS.setInt(2, 18);
+//				pS.setString(3, "Patch Adams");
+//				pS.setString(4, "Risoterapia");
+//				pS.addBatch();
 				
 				int[] batchInsertResult = pS.executeBatch();
 				System.out.println("Number of INSERTs w/ Batch -> " + batchInsertResult.length);
 				
 				// Preparing the UPDATE statement w/ query
-				sSQL = "UPDATE doctor SET hospital_codi = ?"
-						+ "WHERE doctor_codi >= ? AND doctor_codi <= ?";
+				sSQL = "UPDATE doctor SET doctor_hospital_codi = ? "
+						+ "WHERE doctor_codi = ?";
 				pS = con.prepareStatement(sSQL);
 				
 				for (int i = 1; i <= 3; i++) {
 					// Changing the Hospital of our 3 new doctors
-					pS.setInt(i,22);
+					pS.setInt(1, 22);
+					pS.setInt(2, i);
 					pS.addBatch();
 				}
 				int[] batchUpdateResult = pS.executeBatch();
