@@ -6,6 +6,8 @@ public class Doctor {
     private String doctorSpecialization;
     
     // Same model of Constructro as in C#
+    
+    public Doctor() {}
 
     public Doctor(int doctorCode, String name, int hospitalCode, String specialization) {
         this.doctorCode = doctorCode;

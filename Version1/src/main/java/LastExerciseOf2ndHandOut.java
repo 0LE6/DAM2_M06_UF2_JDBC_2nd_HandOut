@@ -5,7 +5,7 @@ public class LastExerciseOf2ndHandOut {
 	public static void main(String[] args) {
 		
 		// Here we create our new Doc.
-		
+		Doctor drOleg = new Doctor(69, "Oleg", 18, "Programmer");
 		
 
 	}
@@ -14,6 +14,7 @@ public class LastExerciseOf2ndHandOut {
 		
 		String connectionUrl = "jdbc:mysql://localhost:3306/hospital?serverTimezone=UTC";
 		String user = "root"; String pass = "";
+		boolean everythingIsOK = true;
 		
 		try (Connection con = DriverManager.getConnection(connectionUrl, user, pass);) {
 			
@@ -41,7 +42,7 @@ public class LastExerciseOf2ndHandOut {
 		}
 		
 		// TODO
-		return true;
+		return everythingIsOK;
 	}
 }
 
