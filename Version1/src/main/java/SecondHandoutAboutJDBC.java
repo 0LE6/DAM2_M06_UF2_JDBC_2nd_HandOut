@@ -99,7 +99,7 @@ public class SecondHandoutAboutJDBC {
 				
 				
 				// ---- EXERCISE 3 ----
-				// CallableStatement
+				// CallableStatement w/ single value
 				
 				// 1st - Preparing the call to our stored PROCEDURE
 				String storedProcedureCall = "{call GetDoctor(?, ?)}";
@@ -117,6 +117,9 @@ public class SecondHandoutAboutJDBC {
 				// Print the result of the OUT parameter
 				System.out.println("Doctor name for ID " + 
 				doctor_codi + ": " + cS.getString(2));
+				
+				// ---- EXERCISE 4 ----
+				// CallableStatement w/ cursor
 				
 				
 				
