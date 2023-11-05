@@ -27,10 +27,17 @@ public class SecondHandoutAboutJDBC {
 				
 				// PREPARED STATEMENT from here:
 				
-				// 1st preparing the query w/ ? as parameters
+				// 1st -> Preparing the query w/ ? as parameters
 				PreparedStatement pS = con.prepareStatement(
 						"UPDATE FROM ALUMNOS SET nota = 'NP' "
 						+ "WHERE exp > ? AND exp < ?");
+				
+				// 2nd -> Parametrization
+				pS.setInt(1, 1200); // 1 = 1st parameters, value 1200
+				pS.setInt(2, 1300); // 2 = 2nd parameter, value 1300
+				
+				// 3rd -> Execution
+				int n = pS.executeUpdate(); // 
 				
 				
 			}
