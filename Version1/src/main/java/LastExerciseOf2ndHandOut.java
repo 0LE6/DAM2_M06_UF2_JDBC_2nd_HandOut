@@ -45,8 +45,8 @@ public class LastExerciseOf2ndHandOut {
 				cS = con.prepareCall("{call CreateDoctor(?, ?, ?, ?)}");
 				cS.setInt(1, d.getDoctorCode());
 				cS.setString(2, d.getName());
-				cS.setInt(4, d.getHospitalCode());
 				cS.setString(3, d.getSpecialization());
+				cS.setInt(4, d.getHospitalCode());
 				cS.execute();
 
 	            // 2nd - Calling our PROCEDURE to Update the doctor
