@@ -14,12 +14,17 @@ public class SecondHandoutAboutJDBC {
 				System.out.println("SUCCESFULLY CONNECTED TO HOSPITAL");
 				Statement st = conn.createStatement();
 				
+				// Pues a ver si chuta lo de commitear a github desde aqui
+				String sSql= "INSERT/DELETE/UPDATE/CREATE TABLE/DROP TABLE…..";
+				sSql = "SELECT * FROM empl";
+				ResultSet rS = st.executeQuery(sSql); 
 				
-				
-				
-				//rS.close();
+				rS.close();
                 st.close();
                 conn.close();
+                
+				
+				
 			}
 		}
 		catch (Exception ex){
