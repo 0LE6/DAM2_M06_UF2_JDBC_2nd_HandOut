@@ -1,7 +1,7 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.PreparedStatement;
 
 public class SecondHandoutAboutJDBC {
 
@@ -9,8 +9,8 @@ public class SecondHandoutAboutJDBC {
 
 		try {
 			String connectionUrl = "jdbc:mysql://localhost:3306/hospital?serverTimezone=UTC";
-			Connection conn = DriverManager.getConnection(connectionUrl, "root", "");
-			if (conn != null) {
+			Connection con = DriverManager.getConnection(connectionUrl, "root", "");
+			if (con != null) {
 				
 				// Little reminder about Statement
 //				System.out.println("SUCCESFULLY CONNECTED TO HOSPITAL");
@@ -26,6 +26,11 @@ public class SecondHandoutAboutJDBC {
 //				conn.close();
 				
 				// PREPARED STATEMENT from here:
+				
+				// 1st preparing the query w/ ? as parameters
+				PreparedStatement pS = con.prepareStatement(
+						"UPDATE FROM ALUMNOS SET nota = 'NP' "
+						+ "WHERE exp > ? AND exp < ?");
 				
 				
 			}
