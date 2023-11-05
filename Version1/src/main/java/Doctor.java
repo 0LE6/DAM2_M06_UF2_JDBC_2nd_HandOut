@@ -50,13 +50,5 @@ public class Doctor {
         this.hospitalCode = hospitalCode;
     }
 
-    @Override
-    public String toString() {
-        return "Doctor{" +
-                "DoctorCode =" + doctorCode +
-                ", DoctorName = '" + doctorName + '\'' +
-                ", DoctorSpecialization ='" + doctorSpecialization + '\'' +
-                ", HospitalCode =" + hospitalCode +
-                '}';
-    }
+    
 }
