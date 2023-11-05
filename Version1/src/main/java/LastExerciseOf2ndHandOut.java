@@ -3,21 +3,35 @@
 public class LastExerciseOf2ndHandOut {
 	
 	public static void main(String[] args) {
-
+		
+		String connectionUrl = "jdbc:mysql://localhost:3306/hospital?serverTimezone=UTC";
+		String user = "root"; String pass = "";
+		
+		try (Connection con = DriverManager.getConnection(connectionUrl, user, pass);) {
+			
+			con.setAutoCommit(false);
+			
 			try {
-				String connectionUrl = "jdbc:mysql://localhost:3306/hospital?serverTimezone=UTC";
-				Connection con = DriverManager.getConnection(connectionUrl, "root", "");
-				if (con != null) {
-					
-					
-					// Finally closing
-				}
+				// ...
+				// ...
+				
+				con.commit();
+				System.out.println("Transaction committed succesfully!");
+				
 			}
-			catch (Exception e){
-				System.out.println("EXCEPTION: CONNECTION NOT ESTABLISHED!");
+			catch (SQLException e){
+				con.rollback();
+				System.out.println("Transaction rolled back due to an Exception");
 				e.printStackTrace(); // Showing the TRACEBACK of our EXCEPTION
 			}
+			finally {
+				con.setAutoCommit(true);
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace(); // Showing the TRACEBACK of our EXCEPTION
 		}
 
+	}
 }
 
