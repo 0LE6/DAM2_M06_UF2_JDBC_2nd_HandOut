@@ -58,7 +58,7 @@ public class SecondHandoutAboutJDBC {
 				
 				// -- EXERCISE 2 --
 				
-				// Preparing the INSERT statement w/ query
+				// Preparing the INSERT statement w/ parametrization
 				sSQL = "INSERT INTO doctor (doctor_codi, doctor_hospital_codi,"
 						+ "doctor_nom, doctor_especialitat)"
 						+ "VALUES (?, ?, ?, ?)";
@@ -86,7 +86,7 @@ public class SecondHandoutAboutJDBC {
 				int[] batchInsertResult = pS.executeBatch();
 				System.out.println("Number of INSERTs w/ Batch -> " + batchInsertResult.length);
 				
-				// Preparing the UPDATE statement w/ query
+				// Preparing the UPDATE statement w/ parametrization
 				sSQL = "UPDATE doctor SET doctor_hospital_codi = ? "
 						+ "WHERE doctor_codi = ?";
 				pS = con.prepareStatement(sSQL);
