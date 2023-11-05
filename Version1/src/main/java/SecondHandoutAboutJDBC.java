@@ -24,6 +24,10 @@ public class SecondHandoutAboutJDBC {
 //				rS.close();
 //				st.close();
 //				conn.close();
+				
+				// PREPARED STATEMENT from here:
+				
+				
 			}
 		}
 		catch (Exception ex){
