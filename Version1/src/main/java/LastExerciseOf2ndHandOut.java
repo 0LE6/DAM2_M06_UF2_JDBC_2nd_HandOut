@@ -5,7 +5,7 @@ public class LastExerciseOf2ndHandOut {
 	public static void main(String[] args) {
 		
 		// Here we create our new Doc.
-		Doctor drOleg = new Doctor(69, "Oleg", 18, "Programmer");
+		Doctor drOleg = new Doctor(420, "Oleg", 18, "Programmer");
 		int newHospitalCode = 22;
 		
 		if (CreateAndUpdate(drOleg, newHospitalCode))
