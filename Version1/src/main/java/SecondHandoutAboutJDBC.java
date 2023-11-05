@@ -121,6 +121,11 @@ public class SecondHandoutAboutJDBC {
 				// ---- EXERCISE 4 ----
 				// CallableStatement w/ cursor
 				
+				// 1st - Preparing the call to our stored PROCEDURE
+				storedProcedureCall = "{call GetDoctorsByHospital(?)}";
+				cS = con.prepareCall(storedProcedureCall);
+				
+				
 				
 				
 				
