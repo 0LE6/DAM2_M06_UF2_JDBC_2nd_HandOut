@@ -43,7 +43,7 @@ public class SecondHandoutAboutJDBC {
 				
 				// --- EXERCISE 1 ---
 				// 1st -> Preparing the SELECT query w/ ?
-                String sSQL = "SELECT * FROM alumnos WHERE exp >= ?";
+                String sSQL = "SELECT * FROM alumnos WHERE exp = ?";
 
                 // 2nd -> Creating the PreparedStatement
                 pS = con.prepareStatement(sSQL);
@@ -56,15 +56,17 @@ public class SecondHandoutAboutJDBC {
                     ShowResults(resultSet);
                 }
 				
+				// Finally closing
+				pS.close();
 			}
 		}
 		catch (Exception e){
 			System.out.println("EXCEPTION: CONNECTION NOT ESTABLISHED!");
 			e.printStackTrace(); // Showing the TRACEBACK of our EXCEPTION
 		}
-
 	}
 	
+	// Method for EXERCISE 1
 	public static void ShowResults(ResultSet results) {
 		try {
 			while (results.next()) {
