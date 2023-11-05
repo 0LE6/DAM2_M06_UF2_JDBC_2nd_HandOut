@@ -52,7 +52,7 @@ public class Doctor {
     public String toString() {
         return "Doctor{" +
                 "DoctorCode =" + doctorCode +
-                ", DoctorName ='" + doctorName + '\'' +
+                ", DoctorName = '" + doctorName + '\'' +
                 ", DoctorSpecialization ='" + doctorSpecialization + '\'' +
                 ", HospitalCode =" + hospitalCode +
                 '}';
