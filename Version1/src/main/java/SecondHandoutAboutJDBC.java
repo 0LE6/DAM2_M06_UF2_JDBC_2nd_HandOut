@@ -111,6 +111,13 @@ public class SecondHandoutAboutJDBC {
 				// Important, register the output parameter
 				cS.registerOutParameter(2, Types.VARCHAR);
 				
+				// Execute the stored procedure
+				cS.execute();
+				
+				// Print the result of the OUT parameter
+				System.out.println("Doctor name for ID " + 
+				doctor_codi + ": " + cS.getString(2));
+				
 				
 				
 				
