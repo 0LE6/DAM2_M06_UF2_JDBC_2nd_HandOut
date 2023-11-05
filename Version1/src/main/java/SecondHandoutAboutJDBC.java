@@ -41,7 +41,7 @@ public class SecondHandoutAboutJDBC {
 				if (n != 0) System.out.println("GOOD UPDATE");
 				else System.out.println("BAD UPDATE");
 				
-				// - EXERCISE 1 -
+				// ---- EXERCISE 1 ----
 				// 1st -> Preparing the SELECT query w/ ?
                 String sSQL = "SELECT * FROM alumnos WHERE exp = ?";
 
@@ -56,7 +56,7 @@ public class SecondHandoutAboutJDBC {
                     ShowResults(resultSet);
                 }
 				
-				// -- EXERCISE 2 --
+				// ---- EXERCISE 2 ----
 				
 				// Preparing the INSERT statement w/ parametrization
 				sSQL = "INSERT INTO doctor (doctor_codi, doctor_hospital_codi,"
@@ -99,6 +99,10 @@ public class SecondHandoutAboutJDBC {
 				}
 				int[] batchUpdateResult = pS.executeBatch();
 				System.out.println("Number of UPDATE w/ Batch -> " + batchUpdateResult.length);
+				
+				
+				// ---- EXERCISE 3 ----
+				
 				
 				
 				
