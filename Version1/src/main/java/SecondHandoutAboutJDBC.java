@@ -46,9 +46,9 @@ public class SecondHandoutAboutJDBC {
                 pS = con.prepareStatement(sSQL);
                 
                 // We're going to select alumnos with exp from 1 to 3
+                ResultSet resultSet = pS.executeQuery();
 				for (int i = 1; i <= 2; i++) {
                     pS.setInt(1, i); 
-                    ResultSet resultSet = pS.executeQuery();
                     System.out.println("Results for exp -> " + i + ":");
                     ShowResults(resultSet);
                 }
@@ -125,7 +125,19 @@ public class SecondHandoutAboutJDBC {
 				storedProcedureCall = "{call GetDoctorsByHospital(?)}";
 				cS = con.prepareCall(storedProcedureCall);
 				
+				int doctor_hospital_codi = 22;
+				cS.setInt(1, doctor_hospital_codi);
 				
+				// Execute the stored procedure w/ bool variable 
+				boolean hasResults = cS.execute();
+				
+				// Processing the result:
+				if (hasResults) {
+					resultSet = cS.getResultSet();
+					ShowResultForCallableStatementWithcursor(resultSet);
+					
+				}
+				else ;
 				
 				
 				
@@ -154,6 +166,25 @@ public class SecondHandoutAboutJDBC {
 			e.printStackTrace(); // Showing the TRACEBACK of our EXCEPTION
 		}
 		
+	}
+	
+	public static void ShowResultForCallableStatementWithcursor(ResultSet results) {
+		try {
+			while (results.next()) {
+				int doctorCode = results.getInt("doctor_codi");
+				int hospitalCode = results.getInt("doctor_hospital_codi");
+	            String doctorName = results.getString("doctor_nom");
+	            String doctorSpecialization= results.getString("doctor_especialitat");
+	            System.out.println("Code: " + doctorCode + 
+	            		" | Name: " + doctorName + 
+	            		" | HospitalCode: " + hospitalCode + 
+	            		" | DocSpecialization: " + doctorSpecialization);
+			}
+		}
+		catch (Exception e) {
+			System.out.println("EXCEPTION: ERROR IN METHOD ShowResultForCallableStatementWithcursor");
+			e.printStackTrace(); // Showing the TRACEBACK of our EXCEPTION
+		}
 	}
 
 }
