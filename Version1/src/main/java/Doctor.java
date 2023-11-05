@@ -5,6 +5,7 @@ public class Doctor {
     private int hospitalCode;
     private String doctorSpecialization;
     
+    // Same model of Constructro as in C#
 
     public Doctor(int doctorCode, String name, int hospitalCode, String specialization) {
         this.doctorCode = doctorCode;
@@ -13,6 +14,8 @@ public class Doctor {
         this.doctorSpecialization = specialization;
     }
 
+    // The weird part, the getters and setters
+    
     public int getDoctorCode() {
         return doctorCode;
     }
@@ -48,10 +51,10 @@ public class Doctor {
     @Override
     public String toString() {
         return "Doctor{" +
-                "doctorCode=" + doctorCode +
-                ", name='" + doctorName + '\'' +
-                ", specialization='" + doctorSpecialization + '\'' +
-                ", hospitalCode=" + hospitalCode +
+                "DoctorCode =" + doctorCode +
+                ", DoctorName ='" + doctorName + '\'' +
+                ", DoctorSpecialization='" + doctorSpecialization + '\'' +
+                ", HospitalCode=" + hospitalCode +
                 '}';
     }
 }
