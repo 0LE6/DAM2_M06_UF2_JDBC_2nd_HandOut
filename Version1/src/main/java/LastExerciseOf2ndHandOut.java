@@ -28,17 +28,19 @@ public class LastExerciseOf2ndHandOut {
 				cS = con.prepareCall("{call CreateDoctor(?, ?, ?, ?)}");
 				cS.setInt(1, d.getDoctorCode());
 				cS.setString(2, d.getName());
-				cS.setString(3, d.getSpecialization());
-				cS.setInt(4, d.getHospitalCode());
+				cS.setInt(3, d.getHospitalCode());
+				cS.setString(4, d.getSpecialization());
 				cS.execute();
 
-	            // Llama al procedimiento almacenado para actualizar el código del hospital
+	            // 2nd - Calling our PROCEDURE to Update the doctor
+				// according to the hospital_code get from the parameter
 				cS = con.prepareCall("{call UpdateDoctorHospital(?, ?)}");
 				cS.setInt(1, d.getDoctorCode());
 				cS.setInt(2, updateHospitalCode);
 				cS.execute();
 				
 				con.commit();
+				
 				System.out.println("Transaction committed succesfully!");
 				
 			}
@@ -55,8 +57,7 @@ public class LastExerciseOf2ndHandOut {
 		catch (SQLException e) {
 			e.printStackTrace(); // Showing the TRACEBACK of our EXCEPTION
 		}
-		
-		// TODO
+
 		return everythingIsOK;
 	}
 }
