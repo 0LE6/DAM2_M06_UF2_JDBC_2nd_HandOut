@@ -99,6 +99,17 @@ public class SecondHandoutAboutJDBC {
 				
 				
 				// ---- EXERCISE 3 ----
+				// CallableStatement
+				
+				// 1st - Preparing the call to our stored PROCEDURE
+				String storedProcedureCall = "{call GetDoctor(?, ?)}";
+				CallableStatement cS = con.prepareCall(storedProcedureCall);
+				
+				int doctor_codi = 1;
+				cS.setInt(1, doctor_codi);
+				
+				// Important, register the output parameter
+				cS.registerOutParameter(2, Types.VARCHAR);
 				
 				
 				
