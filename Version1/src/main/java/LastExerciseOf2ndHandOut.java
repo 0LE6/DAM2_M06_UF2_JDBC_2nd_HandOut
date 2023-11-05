@@ -10,7 +10,19 @@ public class LastExerciseOf2ndHandOut {
 		
 		if (CreateAndUpdate(drOleg, newHospitalCode))
 			System.out.println("SUCCESFULLY CREATED & UPDATED");
+		else System.out.println("FAIL TO CREATED & UPDATED");	
 		
+		// Second doc must generate an exception with non existing hospitalCode
+		Doctor drFail = new Doctor();
+		drFail.setDoctorCode(70);
+		drFail.setName("Fail");
+		drFail.setHospitalCode(18);
+		drFail.setSpecialization("Get Exceptions");
+		
+		// With not existing doctor_codi_hospital
+		if (CreateAndUpdate(drFail, 666))
+			System.out.println("SUCCESFULLY CREATED & UPDATED");
+		else System.out.println("FAIL TO CREATED & UPDATED");	
 		
 
 	}
@@ -33,8 +45,8 @@ public class LastExerciseOf2ndHandOut {
 				cS = con.prepareCall("{call CreateDoctor(?, ?, ?, ?)}");
 				cS.setInt(1, d.getDoctorCode());
 				cS.setString(2, d.getName());
-				cS.setInt(3, d.getHospitalCode());
-				cS.setString(4, d.getSpecialization());
+				cS.setInt(4, d.getHospitalCode());
+				cS.setString(3, d.getSpecialization());
 				cS.execute();
 
 	            // 2nd - Calling our PROCEDURE to Update the doctor
