@@ -11,17 +11,19 @@ public class SecondHandoutAboutJDBC {
 			String connectionUrl = "jdbc:mysql://localhost:3306/hospital?serverTimezone=UTC";
 			Connection conn = DriverManager.getConnection(connectionUrl, "root", "");
 			if (conn != null) {
-				System.out.println("SUCCESFULLY CONNECTED TO HOSPITAL");
-				Statement st = conn.createStatement();
 				
-				// Pues a ver si chuta lo de commitear a github desde aqui
-				String sSql= "INSERT/DELETE/UPDATE/CREATE TABLE/DROP TABLE…..";
-				sSql = "SELECT * FROM empl";
-				ResultSet rS = st.executeQuery(sSql); 
-				
-				rS.close();
-				st.close();
-				conn.close();
+				// Little reminder about Statement
+//				System.out.println("SUCCESFULLY CONNECTED TO HOSPITAL");
+//				Statement st = conn.createStatement();
+//				
+//				// Pues a ver si chuta lo de commitear a github desde aqui
+//				String sSql= "INSERT/DELETE/UPDATE/CREATE TABLE/DROP TABLE…..";
+//				sSql = "SELECT * FROM empl";
+//				ResultSet rS = st.executeQuery(sSql); 
+//				
+//				rS.close();
+//				st.close();
+//				conn.close();
 			}
 		}
 		catch (Exception ex){
