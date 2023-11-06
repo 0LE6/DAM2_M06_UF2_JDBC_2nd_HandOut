@@ -140,7 +140,7 @@ public class SecondHandoutAboutJDBC {
 				cS.close();
 				con.close();
 				
-				// Changes --
+				// Hice ciertos cambios y no se commiteaba [X] solucionado
 			}
 		}
 		catch (Exception e){
