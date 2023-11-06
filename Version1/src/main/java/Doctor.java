@@ -49,4 +49,6 @@ public class Doctor {
     public void setHospitalCode(int hospitalCode) {
         this.hospitalCode = hospitalCode;
     }
+    
+    // Sin @override toString()
 }

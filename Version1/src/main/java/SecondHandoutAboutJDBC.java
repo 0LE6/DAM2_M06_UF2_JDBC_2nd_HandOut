@@ -41,6 +41,8 @@ public class SecondHandoutAboutJDBC {
                     ShowResults(resultSet);
                 }
 				
+				System.out.println("\n");
+				
 				// ---- EXERCISE 2 ----
 				
 				// Preparing the INSERT statement w/ parametrization
@@ -85,6 +87,7 @@ public class SecondHandoutAboutJDBC {
 				int[] batchUpdateResult = pS.executeBatch();
 				System.out.println("Number of UPDATE w/ Batch -> " + batchUpdateResult.length);
 				
+				System.out.println("\n");
 				
 				// ---- EXERCISE 3 ----
 				// CallableStatement w/ single value
@@ -105,6 +108,8 @@ public class SecondHandoutAboutJDBC {
 				// Print the result of the OUT parameter
 				System.out.println("Doctor name for ID " + 
 				doctor_codi + ": " + cS.getString(2));
+				
+				System.out.println("\n");
 				
 				// ---- EXERCISE 4 ----
 				// CallableStatement w/ cursor
