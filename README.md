@@ -2,7 +2,7 @@
 Pues a ver si puedo commitear desde Eclipse
 
 DELIMITER //
-CREATE DEFINER=`root`@`localhost` PROCEDURE `CreateDoctor`(
+CREATE PROCEDURE CreateDoctor(
     IN doctorCode INT,
     IN doctorName VARCHAR(255),
     IN doctorEsp VARCHAR(255),
