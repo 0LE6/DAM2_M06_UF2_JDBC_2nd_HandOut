@@ -110,7 +110,7 @@ public class SecondHandoutAboutJDBC {
 				// CallableStatement w/ cursor
 				
 				// 1st - Preparing the call to our stored PROCEDURE
-				storedProcedureCall = "{call GetDoctorsByHospital(?)}";
+				storedProcedureCall = "{call GetDoctorsByHospitalCode(?)}";
 				cS = con.prepareCall(storedProcedureCall);
 				
 				int doctor_hospital_codi = 22;
