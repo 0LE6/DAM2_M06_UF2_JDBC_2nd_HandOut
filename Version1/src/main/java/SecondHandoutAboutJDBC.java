@@ -139,6 +139,8 @@ public class SecondHandoutAboutJDBC {
 				pS.close();
 				cS.close();
 				con.close();
+				
+				// Changes!
 			}
 		}
 		catch (Exception e){
