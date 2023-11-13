@@ -43,7 +43,7 @@ public class SecondHandoutAboutJDBC {
 				
 				System.out.println("\n");
 				
-				// ---- EXERCISE 2 ----
+				// ---- EXERCISE 2 ---- addBatch & executeBatch
 				
 				// Preparing the INSERT statement w/ parametrization
 				sSQL = "INSERT INTO doctor (doctor_codi, doctor_hospital_codi,"
