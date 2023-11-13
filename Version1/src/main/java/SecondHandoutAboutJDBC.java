@@ -166,6 +166,7 @@ public class SecondHandoutAboutJDBC {
 		
 	}
 	
+	// My personal method to the last exercice
 	public static void ShowResultForCallableStatementWithcursor(ResultSet results) {
 		try {
 			while (results.next()) {
