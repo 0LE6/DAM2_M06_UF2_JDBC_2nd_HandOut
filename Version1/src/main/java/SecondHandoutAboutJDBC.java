@@ -140,7 +140,7 @@ public class SecondHandoutAboutJDBC {
 				cS.close();
 				con.close();
 				
-				// Hice ciertos cambios y no se commiteaba [X] solucionado
+				// Hice ciertos cambios y no se commiteaba a GitHub [X] solucionado
 			}
 		}
 		catch (Exception e){
