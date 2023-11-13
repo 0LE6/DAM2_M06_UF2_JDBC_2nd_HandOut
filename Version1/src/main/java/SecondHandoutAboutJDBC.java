@@ -124,7 +124,7 @@ public class SecondHandoutAboutJDBC {
 				// Execute the stored procedure w/ bool variable 
 				boolean hasResults = cS.execute();
 				
-				// Processing the result:
+				// Processing the result if the executing is giving any result:
 				if (hasResults) {
 					resultSet = cS.getResultSet();
 					ShowResultForCallableStatementWithcursor(resultSet);
