@@ -62,6 +62,7 @@ public class HelloWorld {
                     System.out.println("ERROR TO CREATE A NEW TABLE");
                 }
                 
+                
                 // >> INSERT part:
                 sSql = "INSERT INTO alumnos (exp, nombre, nota) "
                 		+ "VALUES (1, 'Oleg', 'A');";
